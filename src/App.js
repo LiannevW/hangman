@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Title from './components/Title'
-import LetterInput from './components/LetterInput'
-import Guesses from './components/Guesses'
+import Game from './components/Game'
+
 
 class App extends Component {
   render() {
@@ -14,16 +13,11 @@ class App extends Component {
           <h1 className="App-title">Welcome to Hangman</h1>
         </header>
 
-        <p className="App-intro">
-            <Title content="Start hangman" />
-        </p>
-
-        <LetterInput content="Letter input" />
-        <Guesses content= "???" />
+          <Game />
 
       </div>
     );
   }
 }
 
-export default App;
+export default App
