@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Title from './components/Title'
+import LetterInput from './components/LetterInput'
+import Guesses from './components/Guesses'
 
 class App extends Component {
   render() {
@@ -15,6 +17,9 @@ class App extends Component {
         <p className="App-intro">
             <Title content="Start hangman" />
         </p>
+
+        <LetterInput content="Letter input" />
+        <Guesses content= "???" />
 
       </div>
     );
