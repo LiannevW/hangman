@@ -2,7 +2,8 @@ import React, { PureComponent } from 'react'
 
 class Guesses extends PureComponent {
   render() {
-    return <p>Your wrong guesses: { this.props.content }</p>
+    const { guesses } = this.props
+    return (<p>Your wrong guesses: {guesses.join(", ")}</p>)
   }
 }
 
