@@ -1,10 +1,16 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 import LetterInput from './LetterInput'
 import HangmanSteps from './HangmanSteps'
-import Guesses from './Guesses'
-import Word from './Words'
 
 class Game extends PureComponent {
+
+  onChange(event) {
+  const { guesses } = this.props.hangman
+  const { value } = event.target
+  if (!guesses.includes(value))
+    this.props.addGuess(value)
+}
 
   wrongGuessCount(word, guesses) {
     var count = 0;
@@ -15,9 +21,9 @@ class Game extends PureComponent {
       return count
   }
 
-
   render() {
       let game
+      // const guessCount = this.wrongGuessCount(this.word, guesses)
       if ( this.wrongGuessCount() > 10) {
         game = (
           <div>
@@ -36,7 +42,7 @@ class Game extends PureComponent {
         game = (
           <div>
             <LetterInput context="Print dit"/>
-            <HangmanSteps  />
+            <HangmanSteps wrongs={guessCount} />
           </div>
         )
       }
@@ -49,4 +55,6 @@ class Game extends PureComponent {
   }
 }
 
-export default Game
+
+const mapStateToProps = ({ guesses }) => ({ guesses })
+export default connect(mapStateToProps)(Game)

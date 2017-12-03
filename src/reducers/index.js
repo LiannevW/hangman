@@ -1,5 +1,5 @@
-import hangman from './hangmans'
+import guesses from './guesses'
 
 export default {
-  hangman: hangman
+  guesses: guesses
 }
