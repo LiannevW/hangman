@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
 
 class LetterInput extends PureComponent {
   render() {
@@ -13,4 +14,5 @@ class LetterInput extends PureComponent {
   }
 }
 
-export default LetterInput
+const mapStateToProps = ({  }) => ({  })
+export default connect(mapStateToProps)(LetterInput)
